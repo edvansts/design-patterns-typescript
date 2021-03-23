@@ -13,8 +13,8 @@ export class Residente implements ProficionaisMedicina {
   emitirPedidoExame(paciente: Paciente, descricao : string,  tipoExame : tipo, dataExame : Date, recomendacoes :string): Exame {
        return new Exame(tipoExame,descricao,paciente,this,recomendacoes,dataExame); 
   }
-  emitirLaudo( descricao: string):Laudo{
-    var laudo = new Laudo('PENDENTE',descricao,this);
+  emitirLaudo( descricao: string,conclusao:string):Laudo{
+    var laudo = new Laudo('PENDENTE',descricao,conclusao,this);
     return laudo;
   }
 
