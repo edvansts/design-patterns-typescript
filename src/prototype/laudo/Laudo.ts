@@ -9,7 +9,7 @@ export default class Laudo implements Prototype {
     private _status: status,
     private _descricao: string,
     private _medicoEmicao: ProficionaisMedicina,
-    private _medicoRevisao: Docente,
+    private _medicoRevisao: Docente | null = null,
   ) {}
 
   clone(): Laudo {
