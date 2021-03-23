@@ -1,8 +1,6 @@
-type status = 'PENDENTE' | 'DEFINITIVO';
+import Prototype from '../Prototype';
 
-interface Prototype {
-  clone(): Prototype;
-}
+type status = 'PENDENTE' | 'DEFINITIVO';
 
 export default class Laudo implements Prototype {
   constructor(

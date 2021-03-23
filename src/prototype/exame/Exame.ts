@@ -1,11 +1,9 @@
 import Paciente from '../paciente/Paciente';
 import Laudo from '../laudo/Laudo';
+import Prototype from '../Prototype';
 
 type tipo = 'ECO_CARDIOGRAMA' | 'ELETROCARDIOGRAMA' | 'MAPA' | 'HOLTER';
 
-interface Prototype {
-  clone(): Prototype;
-}
 
 export default class Exame implements Prototype {
   private _laudos: Laudo[] = [];
