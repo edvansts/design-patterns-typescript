@@ -1,4 +1,5 @@
 import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
+import { Residente } from '../../factory-method/proficionaisMedicina/Residente';
 import Prototype from '../Prototype';
 
 type status = 'PENDENTE' | 'DEFINITIVO';
@@ -7,8 +8,7 @@ export default class Laudo implements Prototype {
   constructor(
     private _status: status,
     private _descricao: string,
-    private _hipoteseDiagnostica: string,
-    private _medicoEmicao: Medico,
+    private _medicoEmicao: Residente,
     private _medicoRevisao: Medico,
   ) {}
 
@@ -16,7 +16,6 @@ export default class Laudo implements Prototype {
     const newObj = new Laudo(
       this.status,
       this.descricao,
-      this.hipoteseDiagnostica,
       this.medicoEmicao,
       this.medicoRevisao,
     );
@@ -35,13 +34,6 @@ export default class Laudo implements Prototype {
   }
   protected set descricao(value: string) {
     this._descricao = value;
-  }
-
-  protected get hipoteseDiagnostica(): string {
-    return this._hipoteseDiagnostica;
-  }
-  protected set hipoteseDiagnostica(value: string) {
-    this._hipoteseDiagnostica = value;
   }
 
   protected get medicoEmicao(): any {
