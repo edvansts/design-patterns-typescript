@@ -1,23 +1,25 @@
 import Paciente from '../paciente/Paciente';
 import Laudo from '../laudo/Laudo';
 
+type tipo = 'ECO_CARDIOGRAMA' | 'ELETROCARDIOGRAMA' | 'MAPA' | 'HOLTER';
+
 interface Prototype {
   clone(): Prototype;
 }
 
 export default class Exame implements Prototype {
-  private laudos: Laudo[] = [];
+  private _laudos: Laudo[] = [];
 
   constructor(
-    private nome: string,
-    private descricao: string,
-    private paciente: Paciente,
-    private medico: any,
+    private _tipo: tipo,
+    private _descricao: string,
+    private _paciente: Paciente,
+    private _medico: any,
   ) {}
 
   clone(): Exame {
     const newObj = new Exame(
-      this.nome,
+      this.tipo,
       this.descricao,
       this.paciente,
       this.medico,
@@ -27,39 +29,39 @@ export default class Exame implements Prototype {
     return newObj;
   }
 
-  public get $nome(): string {
-    return this.nome;
+  public get tipo(): tipo {
+    return this._tipo;
   }
-  public set $nome(value: string) {
-    this.nome = value;
-  }
-
-  public get $laudos(): Laudo[] {
-    return this.laudos;
+  public set tipo(value: tipo) {
+    this._tipo = value;
   }
 
-  public set $laudos(value: Laudo[]) {
-    this.laudos = value;
+  public get laudos(): Laudo[] {
+    return this._laudos;
   }
 
-  public get $descricao(): string {
-    return this.descricao;
-  }
-  public set $descricao(value: string) {
-    this.descricao = value;
+  public set laudos(value: Laudo[]) {
+    this._laudos = value;
   }
 
-  public get $paciente(): Paciente {
-    return this.paciente;
+  public get descricao(): string {
+    return this._descricao;
   }
-  public set $paciente(value: Paciente) {
-    this.paciente = value;
+  public set descricao(value: string) {
+    this._descricao = value;
   }
 
-  public get $medico(): any {
-    return this.medico;
+  public get paciente(): Paciente {
+    return this._paciente;
   }
-  public set $medico(value: any) {
-    this.medico = value;
+  public set paciente(value: Paciente) {
+    this._paciente = value;
+  }
+
+  public get medico(): any {
+    return this._medico;
+  }
+  public set medico(value: any) {
+    this._medico = value;
   }
 }
