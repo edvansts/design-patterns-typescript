@@ -1,3 +1,4 @@
+import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
 import Prototype from '../Prototype';
 
 type status = 'PENDENTE' | 'DEFINITIVO';
@@ -7,8 +8,8 @@ export default class Laudo implements Prototype {
     private _status: status,
     private _descricao: string,
     private _hipoteseDiagnostica: string,
-    private _medicoEmicao: any,
-    private _medicoRevisao: any,
+    private _medicoEmicao: Medico,
+    private _medicoRevisao: Medico,
   ) {}
 
   clone(): Laudo {
