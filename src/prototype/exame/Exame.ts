@@ -27,6 +27,13 @@ export default class Exame implements Prototype {
     return newObj;
   }
 
+  public adicionarLaudo(laudo: Laudo): boolean {
+    if (laudo === null) return false;
+
+    this.laudos.push(laudo);
+    return true;
+  }
+
   public get tipo(): tipo {
     return this._tipo;
   }
