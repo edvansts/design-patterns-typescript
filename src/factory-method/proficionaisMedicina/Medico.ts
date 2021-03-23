@@ -10,9 +10,10 @@ export class Medico implements ProficionaisMedicina {
   emitirPedidoExame(paciente: Paciente, descricao : string,  tipoExame : tipo, dataExame : Date, recomendacoes :string): Exame {
     return new Exame(tipoExame,descricao,paciente,this,recomendacoes,dataExame); 
 }
-  consultarLaudosDefinitivos(paciente: Paciente): Laudo[] {
-    return [];
-  }
+emitirLaudo( descricao: string):Laudo{
+  var laudo = new Laudo('PENDENTE',descricao,this);
+  return laudo;
+}
 
   public get nome(): string{
     return this._nome;
