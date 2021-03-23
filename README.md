@@ -12,9 +12,9 @@ E por último, rode o arquivo testes.js, que servirá como seu **playground**.
 
 ## Design Patterns implementados 🤤 
 
-- ###[Singleton](https://github.com/edvansts/design-patterns-typescript/tree/main/src/singleton)
-- ###[Prototype](https://github.com/edvansts/design-patterns-typescript/tree/main/src/prototype)
-- ###[Factory Method](https://github.com/edvansts/design-patterns-typescript/tree/main/src/factory-method)
+- [Singleton](https://github.com/edvansts/design-patterns-typescript/tree/main/src/singleton)
+- [Prototype](https://github.com/edvansts/design-patterns-typescript/tree/main/src/prototype)
+- [Factory Method](https://github.com/edvansts/design-patterns-typescript/tree/main/src/factory-method)
 
 
 
