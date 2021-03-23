@@ -1,5 +1,6 @@
 import { Medico } from '../factory-method/proficionaisMedicina/Medico';
 import Exame from '../prototype/exame/Exame';
+import Laudo from '../prototype/laudo/Laudo';
 import Paciente from '../prototype/paciente/Paciente';
 
 export default class Singleton {
@@ -99,5 +100,18 @@ export default class Singleton {
 
     if (pacienteBuscado) return pacienteBuscado;
     else return null;
+  }
+
+  public buscarLaudosPorPaciente(paciente: Paciente): Laudo[] | null {
+    if (paciente === null) return null;
+
+    let laudosPaciente: Laudo[] = [];
+
+    this._exames.map((exame) => {
+      if (exame.paciente === paciente) {
+        laudosPaciente = [...laudosPaciente, ...exame.laudos];
+      }
+    });
+    return laudosPaciente;
   }
 }

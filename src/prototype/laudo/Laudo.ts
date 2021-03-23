@@ -2,7 +2,7 @@ import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
 import { Residente } from '../../factory-method/proficionaisMedicina/Residente';
 import Prototype from '../Prototype';
 
-type status = 'PENDENTE' | 'DEFINITIVO';
+export type status = 'PENDENTE' | 'DEFINITIVO';
 
 export default class Laudo implements Prototype {
   constructor(

@@ -1,7 +1,7 @@
 import Prototype from '../Prototype';
 
-type sexo = 'M' | 'F' | 'NB'; //Masculino, Feminino e Não binário
-type cor = 'VERMELHO' | 'LARANJA' | 'AMARELO' | 'VERDE';
+export type sexo = 'M' | 'F' | 'NB'; //Masculino, Feminino e Não binário
+export type cor = 'VERMELHO' | 'LARANJA' | 'AMARELO' | 'VERDE';
 
 export default class Paciente implements Prototype {
   constructor(

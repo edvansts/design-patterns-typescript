@@ -3,7 +3,7 @@ import Laudo from '../laudo/Laudo';
 import Prototype from '../Prototype';
 import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
 
-type tipo = 'ECO_CARDIOGRAMA' | 'ELETROCARDIOGRAMA' | 'MAPA' | 'HOLTER';
+export type tipo = 'ECO_CARDIOGRAMA' | 'ELETROCARDIOGRAMA' | 'MAPA' | 'HOLTER';
 
 export default class Exame implements Prototype {
   private _laudos: Laudo[] = [];
@@ -13,6 +13,7 @@ export default class Exame implements Prototype {
     private _descricao: string,
     private _paciente: Paciente,
     private _medico: Medico,
+    private _recomendacao: string,
   ) {}
 
   clone(): Exame {
@@ -21,6 +22,7 @@ export default class Exame implements Prototype {
       this.descricao,
       this.paciente,
       this.medico,
+      this.recomendacao,
     );
     newObj.laudos = this.laudos.map((laudo) => laudo.clone());
 
@@ -68,5 +70,12 @@ export default class Exame implements Prototype {
   }
   public set medico(value: any) {
     this._medico = value;
+  }
+
+  public get recomendacao(): string {
+    return this._recomendacao;
+  }
+  public set recomendacao(value: string) {
+    this._recomendacao = value;
   }
 }
