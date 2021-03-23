@@ -1,6 +1,5 @@
 import ProficionaisMedicina from './ProficionaisMedicina';
 import Laudo from '../../prototype/laudo/Laudo';
-import { Medico } from './Medico';
 import Exame , {tipo} from '../../prototype/exame/Exame';
 import Paciente from '../../prototype/paciente/Paciente';
 export class Residente implements ProficionaisMedicina {
