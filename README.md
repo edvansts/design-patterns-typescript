@@ -1,6 +1,6 @@
 # Design Patterns with Typescript 🤯
 
-## Como rodar?
+## Como rodar? 🤖
 
 Você precisa ter o [Visual Studio Code](https://code.visualstudio.com/), e instalar a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no editor. 
 
