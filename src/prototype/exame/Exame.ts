@@ -14,6 +14,7 @@ export default class Exame implements Prototype {
     private _paciente: Paciente,
     private _medico: Medico,
     private _recomendacao: string,
+    private _dataExame: Date,
   ) {}
 
   clone(): Exame {
@@ -23,6 +24,7 @@ export default class Exame implements Prototype {
       this.paciente,
       this.medico,
       this.recomendacao,
+      this.dataExame
     );
     newObj.laudos = this.laudos.map((laudo) => laudo.clone());
 
@@ -77,5 +79,12 @@ export default class Exame implements Prototype {
   }
   public set recomendacao(value: string) {
     this._recomendacao = value;
+  }
+
+  public get dataExame(): Date {
+    return this._dataExame;
+  }
+  public set dataExame(value: Date) {
+    this._dataExame = value;
   }
 }
