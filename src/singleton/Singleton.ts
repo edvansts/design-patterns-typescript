@@ -146,7 +146,7 @@ export default class Singleton {
 
     const newLaudo = medico.emitirLaudo(descricao, conclusao);
 
-    const indexExame = this._exames.findIndex((exame) => exame === exame);
+    const indexExame = this._exames.findIndex((exam) => exam === exame);
 
     this._exames[indexExame].adicionarLaudo(newLaudo);
 
