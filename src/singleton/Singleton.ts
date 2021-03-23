@@ -74,7 +74,9 @@ export default class Singleton {
     return true;
   }
 
-  public buscarMedico(medico: ProficionaisMedicina): ProficionaisMedicina | null {
+  public buscarMedico(
+    medico: ProficionaisMedicina,
+  ): ProficionaisMedicina | null {
     if (medico === null) return null;
 
     const medicoBuscado = this.medicos.find((medic) => medic === medico);
@@ -131,6 +133,23 @@ export default class Singleton {
 
     laudo.status = 'DEFINITIVO';
     laudo.medicoRevisao = medico;
+    return true;
+  }
+
+  public emitirLaudo(
+    descricao: string,
+    conclusao: string,
+    medico: ProficionaisMedicina,
+    exame: Exame,
+  ): boolean {
+    if (medico === null) return false;
+
+    const newLaudo = medico.emitirLaudo(descricao, conclusao);
+
+    const indexExame = this._exames.findIndex((exame) => exame === exame);
+
+    this._exames[indexExame].adicionarLaudo(newLaudo);
+
     return true;
   }
 }
