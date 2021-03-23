@@ -5,11 +5,13 @@ import Prototype from '../Prototype';
 export type status = 'PENDENTE' | 'DEFINITIVO';
 
 export default class Laudo implements Prototype {
+  private _medicoRevisao: Docente | null = null;
+
   constructor(
     private _status: status,
     private _descricao: string,
+    private _conclusao: string,
     private _medicoEmicao: ProficionaisMedicina,
-    private _medicoRevisao: Docente | null = null,
   ) {}
 
   clone(): Laudo {
@@ -48,5 +50,12 @@ export default class Laudo implements Prototype {
   }
   public set medicoRevisao(value: any) {
     this._medicoRevisao = value;
+  }
+
+  public get conclusao(): string {
+    return this._conclusao;
+  }
+  public set conclusao(value: string) {
+    this._conclusao = value;
   }
 }
