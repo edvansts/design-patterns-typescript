@@ -1,4 +1,5 @@
-import { Medico } from '../factory-method/proficionaisMedicina/Medico';
+import { Docente } from '../factory-method/proficionaisMedicina/Docentes';
+import ProficionaisMedicina from '../factory-method/proficionaisMedicina/ProficionaisMedicina';
 import Exame from '../prototype/exame/Exame';
 import Laudo from '../prototype/laudo/Laudo';
 import Paciente from '../prototype/paciente/Paciente';
@@ -6,7 +7,7 @@ import Paciente from '../prototype/paciente/Paciente';
 export default class Singleton {
   private static _instance: Singleton | null = null;
 
-  private _medicos: Medico[] = [];
+  private _medicos: ProficionaisMedicina[] = [];
   private _exames: Exame[] = [];
   private _pacientes: Paciente[] = [];
 
@@ -20,7 +21,7 @@ export default class Singleton {
     return Singleton._instance;
   }
 
-  public get medicos(): Medico[] {
+  public get medicos(): ProficionaisMedicina[] {
     return this._medicos;
   }
 
@@ -32,7 +33,7 @@ export default class Singleton {
     return this._pacientes;
   }
 
-  public addMedico(medico: Medico): boolean {
+  public addMedico(medico: ProficionaisMedicina): boolean {
     if (medico === null) return false;
     this.medicos.push(medico);
     return true;
@@ -73,7 +74,7 @@ export default class Singleton {
     return true;
   }
 
-  public buscarMedico(medico: Medico): Medico | null {
+  public buscarMedico(medico: ProficionaisMedicina): ProficionaisMedicina | null {
     if (medico === null) return null;
 
     const medicoBuscado = this.medicos.find((medic) => medic === medico);
@@ -102,16 +103,34 @@ export default class Singleton {
     else return null;
   }
 
-  public buscarLaudosPorPaciente(paciente: Paciente): Laudo[] | null {
+  public buscarLaudosDefinitivosPorPaciente(
+    paciente: Paciente,
+  ): Laudo[] | null {
     if (paciente === null) return null;
 
-    let laudosPaciente: Laudo[] = [];
+    let laudosDefinitivosPaciente: Laudo[] = [];
 
     this._exames.map((exame) => {
       if (exame.paciente === paciente) {
-        laudosPaciente = [...laudosPaciente, ...exame.laudos];
+        const laudosDefinitivosExame = exame.laudos.filter(
+          (laudo) => laudo.status == 'DEFINITIVO',
+        );
+        laudosDefinitivosPaciente = [
+          ...laudosDefinitivosPaciente,
+          ...laudosDefinitivosExame,
+        ];
       }
     });
-    return laudosPaciente;
+    return laudosDefinitivosPaciente;
+  }
+
+  public revisarLaudo(medico: Docente, laudo: Laudo): boolean {
+    if (medico === null || laudo === null) return false;
+
+    if (laudo.status === 'DEFINITIVO') return false;
+
+    laudo.status = 'DEFINITIVO';
+    laudo.medicoRevisao = medico;
+    return true;
   }
 }

@@ -1,5 +1,5 @@
-import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
-import { Residente } from '../../factory-method/proficionaisMedicina/Residente';
+import { Docente } from '../../factory-method/proficionaisMedicina/Docentes';
+import ProficionaisMedicina from '../../factory-method/proficionaisMedicina/ProficionaisMedicina';
 import Prototype from '../Prototype';
 
 export type status = 'PENDENTE' | 'DEFINITIVO';
@@ -8,8 +8,8 @@ export default class Laudo implements Prototype {
   constructor(
     private _status: status,
     private _descricao: string,
-    private _medicoEmicao: Residente,
-    private _medicoRevisao: Medico,
+    private _medicoEmicao: ProficionaisMedicina,
+    private _medicoRevisao: Docente,
   ) {}
 
   clone(): Laudo {
@@ -22,31 +22,31 @@ export default class Laudo implements Prototype {
     return newObj;
   }
 
-  protected get status(): status {
+  public get status(): status {
     return this._status;
   }
-  protected set status(value: status) {
+  public set status(value: status) {
     this._status = value;
   }
 
-  protected get descricao(): string {
+  public get descricao(): string {
     return this._descricao;
   }
-  protected set descricao(value: string) {
+  public set descricao(value: string) {
     this._descricao = value;
   }
 
-  protected get medicoEmicao(): any {
+  public get medicoEmicao(): any {
     return this._medicoEmicao;
   }
-  protected set medicoEmicao(value: any) {
+  public set medicoEmicao(value: any) {
     this._medicoEmicao = value;
   }
 
-  protected get medicoRevisao(): any {
+  public get medicoRevisao(): any {
     return this._medicoRevisao;
   }
-  protected set medicoRevisao(value: any) {
+  public set medicoRevisao(value: any) {
     this._medicoRevisao = value;
   }
 }
