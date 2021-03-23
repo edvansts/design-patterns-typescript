@@ -1,7 +1,7 @@
 import ProficionaisMedicina from './ProficionaisMedicina';
 import Laudo from '../../prototype/laudo/Laudo';
 import { Medico } from './Medico';
-import Exame from '../../prototype/exame/Exame';
+import Exame , {tipo} from '../../prototype/exame/Exame';
 import Paciente from '../../prototype/paciente/Paciente';
 export class Residente implements ProficionaisMedicina {
   constructor(
@@ -9,7 +9,10 @@ export class Residente implements ProficionaisMedicina {
     private _CRM : string,
     private _anoResidencia : number
   ){}
-  emitirPedidoExame(paciente: Paciente): void {}
+  
+  emitirPedidoExame(paciente: Paciente, descricao : string,  tipoExame : tipo, dataExame : Date, recomendacoes :string): Exame {
+       return new Exame(tipoExame,descricao,paciente,this,recomendacoes,dataExame); 
+  }
   consultarLaudosDefinitivos(paciente: Paciente): Laudo[] {
     return[]
   }

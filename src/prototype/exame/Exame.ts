@@ -2,6 +2,8 @@ import Paciente from '../paciente/Paciente';
 import Laudo from '../laudo/Laudo';
 import Prototype from '../Prototype';
 import { Medico } from '../../factory-method/proficionaisMedicina/Medico';
+import { Residente } from '../../factory-method/proficionaisMedicina/Residente';
+import { Docente } from '../../factory-method/proficionaisMedicina/Docentes';
 
 export type tipo = 'ECO_CARDIOGRAMA' | 'ELETROCARDIOGRAMA' | 'MAPA' | 'HOLTER';
 
@@ -12,7 +14,7 @@ export default class Exame implements Prototype {
     private _tipo: tipo,
     private _descricao: string,
     private _paciente: Paciente,
-    private _medico: Medico,
+    private _medico: Medico| Residente|Docente,
     private _recomendacao: string,
     private _dataExame: Date,
   ) {}
