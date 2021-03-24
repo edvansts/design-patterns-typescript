@@ -6,17 +6,13 @@ Você precisa ter o [Visual Studio Code](https://code.visualstudio.com/), e inst
 
 Feito isto, use o comando ```npm install``` para instalar as dependências do projeto.
 
-E por último, rode o arquivo testes.js, que servirá como seu **playground**.
+E por último, acesse e rode o arquivo `testes.ts`, que servirá como seu **playground**, via **Code Run** (*o icone do code run fica no canto superior direito*).
 
 ![how_to_run](https://media.giphy.com/media/uhoD0uDBwCXBCpy5Oq/giphy.gif)
+
 
 ## Design Patterns implementados 🤤 
 
 - [Singleton](https://github.com/edvansts/design-patterns-typescript/tree/main/src/singleton)
 - [Prototype](https://github.com/edvansts/design-patterns-typescript/tree/main/src/prototype)
 - [Factory Method](https://github.com/edvansts/design-patterns-typescript/tree/main/src/factory-method)
-
-
-
-
-
