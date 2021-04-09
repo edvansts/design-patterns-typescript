@@ -2,7 +2,7 @@
 
 ## Como rodar? 🤖
 
-Você precisa ter o [Visual Studio Code](https://code.visualstudio.com/), e instalar a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no editor. 
+Você precisa ter o [Nodejs](https://nodejs.org/) instalado na sua máquina, um editor da sua preferência, recomendo o [Visual Studio Code](https://code.visualstudio.com/), e instalar a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no editor. 
 
 Feito isto, use o comando ```npm install``` para instalar as dependências do projeto.
 
