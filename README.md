@@ -16,3 +16,4 @@ E por último, acesse e rode o arquivo `testes.ts`, que servirá como seu **play
 - [Singleton](https://github.com/edvansts/design-patterns-typescript/tree/main/src/singleton)
 - [Prototype](https://github.com/edvansts/design-patterns-typescript/tree/main/src/prototype)
 - [Factory Method](https://github.com/edvansts/design-patterns-typescript/tree/main/src/factory-method)
+- [Facade](https://github.com/edvansts/design-patterns-typescript/tree/main/src/facade)
