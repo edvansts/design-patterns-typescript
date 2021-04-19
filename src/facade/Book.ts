@@ -1,4 +1,4 @@
-import Product from './product';
+import Product from './Product';
 
 class Book extends Product {
     private synopsis: string;
